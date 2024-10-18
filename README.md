@@ -80,7 +80,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[[Live Website Link]](https://the-craft-house.vercel.app/)
+[[Live Website Link]](https://projectx-lilac.vercel.app)
 
 <b>The Craft kingdom </b> is a ecommerce web application having variety of local and handmade art and craft products . It is fully responsive and has user friendly design .For security purpose , Login and signup is added to authenticate users. All the products shown on are being  fetched from the MongoDB database . It also has integrated <b>Paytm Payment Gateway</b> using paytm APIs and test MID and test MKEY . 
 
@@ -102,7 +102,7 @@
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-To have a look of website Visit : <a href='https://the-craft-house.vercel.app/'>The Craft kingdom </a>
+To have a look of website Visit : <a href='https://projectx-lilac.vercel.app/login'>The Craft kingdom </a>
 
 DEMO Screenshots 
 
@@ -133,7 +133,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/manishkumar-hub/The-craft-House.git
+   git clone https://github.com/sechafer/projectx.git
    ```
 2. Install NPM packages
    ```sh
@@ -173,8 +173,8 @@ Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some sechafer'`)
+4. Push to the Branch (`git push origin feature/Asechafer`)
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -193,8 +193,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Email  -  <a href="mailto:manishkumarpandit12@gmail.com">Manish </a>
+Email  -  <a href="mailto:sechafer@gmail.com">Manish </a>
 
-Project Link: [https://github.com/manishkumar-hub/The-craft-House](https://github.com/manishkumar-hub/The-craft-House)
+Project Link: [https://github.com/sechafer/projectx](https://github.com/sechafer/projectx)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
