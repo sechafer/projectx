@@ -6,7 +6,7 @@ const Ceramics = ({ products }) => {
 
   return (
     <div>
-    <head><title>Ceramics- The House Craft</title></head>
+    <head><title>Ceramics- The kingdom Craft</title></head>
       <section className="text-gray-600 body-font">
         <div className="container md:ml-32 px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">

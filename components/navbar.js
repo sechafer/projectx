@@ -50,8 +50,8 @@ const Navbar = ({ key, logout, user, cart, addtoCart, removeFromCart, clearCart,
       <Link href={"/"}>
         <a>
           <div className=" logo mr-16 flex items-center justify-start  text-gray-900">
-            <Image src={'/logo.png'} alt="The craft House" width={100} height="80" />
-            <span className=' text-3xl md:text-3xl font-serif text-pink-600'><b>The Craft House</b>
+            <Image src={'/logo.png'} alt="The Craft kingdom" width={100} height="80" />
+            <span className=' text-3xl md:text-3xl font-serif text-pink-600'><b>The Craft kingdom</b>
             </span>
           </div>
         </a>

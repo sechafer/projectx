@@ -33,7 +33,7 @@
     <img src="public/logo.png" alt="Logo" width="100" height="100">
   </a>
 
-<h3 align="center">The Craft House</h3>
+<h3 align="center">The Craft kingdom</h3>
 
   <p align="center">
     <br />
@@ -82,7 +82,7 @@
 
 [[Live Website Link]](https://the-craft-house.vercel.app/)
 
-<b>The Craft House </b> is a ecommerce web application having variety of local and handmade art and craft products . It is fully responsive and has user friendly design .For security purpose , Login and signup is added to authenticate users. All the products shown on are being  fetched from the MongoDB database . It also has integrated <b>Paytm Payment Gateway</b> using paytm APIs and test MID and test MKEY . 
+<b>The Craft kingdom </b> is a ecommerce web application having variety of local and handmade art and craft products . It is fully responsive and has user friendly design .For security purpose , Login and signup is added to authenticate users. All the products shown on are being  fetched from the MongoDB database . It also has integrated <b>Paytm Payment Gateway</b> using paytm APIs and test MID and test MKEY . 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -102,7 +102,7 @@
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-To have a look of website Visit : <a href='https://the-craft-house.vercel.app/'>The Craft House </a>
+To have a look of website Visit : <a href='https://the-craft-house.vercel.app/'>The Craft kingdom </a>
 
 DEMO Screenshots 
 

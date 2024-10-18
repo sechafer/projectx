@@ -173,7 +173,7 @@ const Checkout = ({ cart, clearCart, subtotal, addtoCart, removeFromCart }) => {
         pauseOnHover
       />
       <Head>
-      <title>Checkout - The Craft House</title>
+      <title>Checkout - The Craft kingdom</title>
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" /> </Head>
       <Script type="application/javascript" crossorigin="anonymous" src={`${process.env.NEXT_PUBLIC_PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.NEXT_PUBLIC_PAYTM_MID}.js`} />
       <h1 className='font-bold text-4xl text-center my-8'>Checkout</h1>

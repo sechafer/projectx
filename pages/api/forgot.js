@@ -27,14 +27,14 @@ const handler = async (req, res) => {
         });
         const accessToken = oauth2Client.getAccessToken()
         let email = `Hey,
-    You recently requested to reset the password for your account on The Craft House --  .
+    You recently requested to reset the password for your account on The Craft kingdom --  .
     <br>
     To reset your password , Please follow the link below : <a  href ="http://localhost:30000.
     /forgot?token=${token}"> Click Here </a>
     <br>
     <br>
     If you did not request a password reset, please ignore this email or reply to let us know. This password reset link is only valid for the next 30 minutes.
-    Thanks, The Craft House team` ;
+    Thanks, The Craft kingdom team` ;
 
         // let testAccount = await nodemailer.createTestAccount();
 
@@ -63,7 +63,7 @@ const handler = async (req, res) => {
         });
 
         let info = await transporter.sendMail({
-            from: 'manishkumarpandit12@gmail.com', // sender address
+            from: 'sechafer@gmail.com', // sender address
             to: `${req.body.email}`, // list of receivers
             subject: "Reset Password ", // Subject line
             text: "", // plain text body

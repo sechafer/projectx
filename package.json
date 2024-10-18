@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "node seed.js"
   },
   "dependencies": {
     "crypto-js": "^4.1.1",
+    "dotenv": "^16.4.5",
     "googleapis": "^101.0.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.3.5",
+    "mongoose": "^6.13.3",
     "next": "12.1.6",
     "nextjs-progressbar": "^0.0.14",
     "nodemailer": "^6.7.5",
