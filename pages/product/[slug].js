@@ -142,7 +142,7 @@ const Post = ({ addtoCart, product, variants, buyNow }) => {
             </div>
           </div>
           <div className="flex">
-            <span className="title-font font-medium text-2xl text-gray-900">₹ {product[0].price}</span>
+            <span className="title-font font-medium text-2xl text-gray-900">$ {product[0].price}</span>
           {product[0].avaliableQty<=0 && <span className="title-font font-medium text-2xl text-gray-900">Out of stock</span>}
             <button onClick={() => { buyNow(slug, 1, product[0].price, product[0].title, color) }} disabled={product[0].avaliableQty<=0} className="flex disabled:bg-pink-300 ml-14 text-white bg-pink-500 border-0 py-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">Buy Now</button>
             <button onClick={() => { addtoCart(slug, 1, product[0].price, product[0].title, color) }} disabled={product[0].avaliableQty<=0} className="flex disabled:bg-pink-300 ml-2 md:ml-8 text-white bg-pink-500 border-0 py-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded">Add to Cart</button>

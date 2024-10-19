@@ -45,7 +45,7 @@ const OrderPage = ({ order, subtotal, clearCart }) => {
                   <span className="text-gray-500">{products[key].name}</span>
                   <span className="ml-auto text-gray-900">{products[key].qty}</span>
                   <span className="ml-auto text-gray-900">{products[key].variant}</span>
-                  <span className="ml-auto text-gray-900">₹ {products[key].price}</span>
+                  <span className="ml-auto text-gray-900">$ {products[key].price}</span>
                 </div>
               })}
 

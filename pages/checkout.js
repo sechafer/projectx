@@ -245,12 +245,12 @@ const Checkout = ({ cart, clearCart, subtotal, addtoCart, removeFromCart }) => {
           })}
 
         </ol>
-        <span className='font-bold mx-8'>Subtotal : ₹ {subtotal}</span>
+        <span className='font-bold mx-8'>Subtotal : $ {subtotal}</span>
       </div>
       <div className="pay">
         <Link href={"/checkout"} >
           <a >
-            <button disabled={disabled} onClick={initiatePayment} className="disabled:bg-pink-300 flex mx-1 mt-16 text-white bg-pink-500 border-0 py-2 px-2 focus:outline-none hover:bg-pink-600 rounded text-lg"> <BsFillBagCheckFill className='mt-1 mx-1' />  Pay  ₹ {subtotal} </button>  </a>
+            <button disabled={disabled} onClick={initiatePayment} className="disabled:bg-pink-300 flex mx-1 mt-16 text-white bg-pink-500 border-0 py-2 px-2 focus:outline-none hover:bg-pink-600 rounded text-lg"> <BsFillBagCheckFill className='mt-1 mx-1' />  Pay  $ {subtotal} </button>  </a>
         </Link>
         <h3 className='text-red-500 mt-3 font-bold'>Note : Currently we are only accepting Card payments . Sorry, for the inconvenience caused</h3>
       </div>

@@ -20,7 +20,7 @@ const Pottery = ({ products }) => {
                   <div className="mt-4 text-center md:text-left">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{products[item].category}</h3>
                     <h2 className="text-gray-900 title-font text-lg font-medium">{products[item].title}</h2>
-                    <p className="mt-1">₹ {products[item].price}</p>
+                    <p className="mt-1">$ {products[item].price}</p>
                     <div className="flex">
                       <span className="mr-3">Color</span>
                       {products[item].color.includes("red") && <button className="border-2 border-red-300 ml-1 bg-red-700 rounded-full w-6 h-6 focus:outline-none"></button>}

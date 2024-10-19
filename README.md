@@ -15,7 +15,7 @@
 *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
 *** See the bottom of this document for the declaration of the reference variables
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+***
 -->
 <!-- [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/manishkumar-hub/The-craft-House">
+  <a href="https://github.com/sechafer/projectx">
     <img src="public/logo.png" alt="Logo" width="100" height="100">
   </a>
 
@@ -37,14 +37,14 @@
 
   <p align="center">
     <br />
-    <a href="https://github.com/manishkumar-hub/The-craft-House"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/sechafer/projectx"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://the-craft-house.vercel.app/">Go To website</a>
+    <a href="https://projectx-lilac.vercel.app">Go To website</a>
     ·
-    <a href="https://github.com/manishkumar-hub/The-craft-House/issues">Report Bug</a>
+    <a href="https://github.com/sechafer/projectx/issues">Report Bug</a>
     ·
-    <a href="https://github.com/manishkumar-hub/The-craft-House/issues">Request Feature</a>
+    <a href="https://github.com/sechafer/projectx/issues">Request Feature</a>
   </p>
 </div>
 

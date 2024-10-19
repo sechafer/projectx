@@ -95,7 +95,7 @@ const Navbar = ({ key, logout, user, cart, addtoCart, removeFromCart, clearCart,
           })}
 
         </ol>
-        <span className='font-bold mx-8'>Subtotal : ₹ {subtotal}</span>
+        <span className='font-bold mx-8'>Subtotal : $ {subtotal}</span>
         <div className="flex">
           <Link href={"/checkout"} >
             <a >

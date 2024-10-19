@@ -10,7 +10,7 @@ const Footer = () => {
     <Link href={"/"}>
     <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
     <Image src="/logo.png" className='w-20' alt="" width={100} height={80} />
-    <span  >The Craft Kindom</span>
+    <span  >The Craft kingdom</span>
     </a>
     </Link>
       <p className="mt-2 text-sm text-gray-500 px-16">  Blend  of local Crafts for all your need</p>
@@ -95,8 +95,8 @@ const Footer = () => {
   </div>
   <div className="bg-gray-100">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p className="text-gray-500 text-sm text-center sm:text-left">© 2024 The Craft Kindom- All rights reserved
-        <a href="https://x.com/kindomcraft" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank"></a>
+      <p className="text-gray-500 text-sm text-center sm:text-left">© 2024 The Craft Kingdom- All rights reserved
+        <a href="https://x.com/kingdomcraft" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank"></a>
       </p>
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
         <a className="text-gray-500">
