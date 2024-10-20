@@ -106,12 +106,12 @@ To have a look of website Visit : <a href='https://projectx-lilac.vercel.app/log
 
 DEMO Screenshots 
 
-<img src="https://i.postimg.cc/xCV8K4tL/Screenshot-14.png" alt="im" >
+<img src="https://github.com/sechafer/projectx/blob/main/Screenshots/Screenshot%20(14).png?raw=true" alt="im" >
 <br>
 
-<img src="https://i.postimg.cc/FsHRgcgC/Screenshot-15.png" alt="im" >
-<img src="https://i.postimg.cc/1RHXqM6N/Screenshot-16.png" alt="im" >
-<img src="https://i.postimg.cc/KjZYWgXz/Screenshot-17.png" alt="im" >
+<img src="https://github.com/sechafer/projectx/blob/main/Screenshots/Screenshot%20(15).png?raw=true" alt="im" >
+<img src="https://github.com/sechafer/projectx/blob/main/Screenshots/Screenshot%20(16).png?raw=true" alt="im" >
+<img src="https://github.com/sechafer/projectx/blob/main/Screenshots/Screenshot%20(18).png?raw=true" alt="im" >
 
 
 <!-- GETTING STARTED -->
@@ -193,7 +193,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Email  -  <a href="mailto:sechafer@gmail.com">Manish </a>
+Email  -  <a href="mailto:sechafer@gmail.com">Sechafer </a>
 
 Project Link: [https://github.com/sechafer/projectx](https://github.com/sechafer/projectx)
 

@@ -45,7 +45,7 @@ const handler = async (req, res) => {
         //     // port: 587,
         //     // secure: false, // true for 465, false for other ports
         //     auth: {
-        //         user: "manishkumarpandit12@gmail.com", // generated ethereal user
+        //         user: "$kumarpandit12@gmail.com", // generated ethereal user
         //         pass: 'Manish@122', // generated ethereal password
         //     },
         // });
