@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 const CommentSchema = new mongoose.Schema({
   name: { type: String, required: true },
   comment: { type: String, required: true },
+  date: { type: Date, default: Date.now }, // Agregar la fecha de creación del comentario
 });
 
 // Define el esquema de producto

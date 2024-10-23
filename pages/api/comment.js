@@ -30,7 +30,7 @@ const handler = async (req, res) => {
       }
 
       // Crear el comentario
-      const newComment = { name, comment: message };
+      const newComment = { name, comment: message, date: new Date() };
 
       // Insertar el comentario en el array de comentarios del producto
       product.comments.push(newComment);

@@ -159,7 +159,7 @@ const Post = ({ addtoCart, product, variants, buyNow }) => {
           </div>
           {!service && service != null && <div className="text-sm text-pink-700 font-bold mt-4">Sorry!! We do not deliver to this Pincode</div>}
           {service && <div className="text-sm text-green-700 font-bold mt-4">Yay!! This product is available for your Pincode</div>}
-          <Comments productId={product[0]._id}/>
+          <Comments productId={product[0]._id} dataProduct={product[0]}/>
 
         </div>
       </div>
