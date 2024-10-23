@@ -1,27 +1,36 @@
+import mongoose from 'mongoose';
 import connectDb from '../../middleware/mongoose';
-import Product from '../../models/comment'; // El modelo Product con el campo comments
+import Product from '../../models/comment'; // Asegúrate de que este sea el modelo correcto
+
 
 const handler = async (req, res) => {
   if (req.method === 'POST') {
     try {
-      const { name, message } = req.body;
-        console.log(name);
-        console.log(_id);
-        console.log(message);
+      const { productId, name, comment: message } = req.body;
+      console.log("Received comment:", { productId, name, message }); // Agrega esta línea
+      console.log("Received body:",req.body)
+      // Convertir productId a ObjectId
+      const productObjectId = mongoose.Types.ObjectId(productId);
+      console.log("Converted productId:", productObjectId);  
       // Validar que los campos necesarios estén presentes
       if (!name || !message) {
         return res.status(400).json({ error: 'Please provide productId, name, and message' });
       }
 
       // Encontrar el producto por su ID y agregar el nuevo comentario
-      const product = await Product.findById(_id);
-      
+      const product = await Product.findById(productObjectId);
+      console.log("product: ",product);
       if (!product) {
         return res.status(404).json({ error: 'Product not found' });
       }
 
+      // Asegúrate de que product.comments es un array
+      if (!Array.isArray(product.comments)) {
+        product.comments = []; // Inicializa como un array vacío si no existe
+      }
+
       // Crear el comentario
-      const newComment = { name, message };
+      const newComment = { name, comment: message };
 
       // Insertar el comentario en el array de comentarios del producto
       product.comments.push(newComment);

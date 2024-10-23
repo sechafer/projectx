@@ -1,15 +1,16 @@
 import React from "react";
 import { useState } from 'react';
 
-const Comments = ({_id}) => {
+const Comments = ({productId}) => {
 //   console.log("product3", product.productName[0].title);
+console.log (productId)
 const [name, setName] = useState('');
   const [message, setMessage] = useState('');
 
   const submitComment = async (e) => {
     e.preventDefault();
 
-    const comment = { name, message };
+    const comment = { productId, name, comment: message };
 
     try {
       const res = await fetch('/api/comment', {
@@ -21,6 +22,7 @@ const [name, setName] = useState('');
       });
 
       const data = await res.json();
+      console.log('Response from API:', data); // Agrega esta línea para ver la respuesta
 
       if (res.ok) {
         alert('Comment submitted successfully!');
