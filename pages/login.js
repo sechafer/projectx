@@ -14,6 +14,7 @@ const Login = () => {
       Router.push('/')
     }
   }, []);
+
   const handleChange = (e) => {
     if (e.target.name == 'email') {
       setemail(e.target.value);
@@ -22,11 +23,11 @@ const Login = () => {
       setpassword(e.target.value);
     }
   }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = { email, password };
     // const data = { username: 'example' };
-
     let res = await fetch(`${process.env.NEXT_PUBLIC_HOST }/api/login`, {
       method: 'POST', // or 'PUT'
       headers: {
@@ -65,8 +66,8 @@ const Login = () => {
         progress: undefined,
       });
     }
-
   }
+
   return (
     <div>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

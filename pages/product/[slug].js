@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Comments  from '../../components/comments';
 
 
 const Post = ({ addtoCart, product, variants, buyNow }) => {
@@ -158,6 +159,8 @@ const Post = ({ addtoCart, product, variants, buyNow }) => {
           </div>
           {!service && service != null && <div className="text-sm text-pink-700 font-bold mt-4">Sorry!! We do not deliver to this Pincode</div>}
           {service && <div className="text-sm text-green-700 font-bold mt-4">Yay!! This product is available for your Pincode</div>}
+          <Comments productName={product}/>
+
         </div>
       </div>
     </div>
