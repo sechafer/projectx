@@ -1,30 +1,11 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const Comments = ({ productId, dataProduct }) => {
-  //   console.log("product3", product.productName[0].title);
-  console.log(productId);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [comments, setComments] = useState([]); // Estado para almacenar los comentarios;
+  const [comments, setComments] = useState(dataProduct.comments || []); // Estado inicial con los comentarios de dataProduct
 
-  // Obtener los comentarios desde el backend cuando el componente se monte
-  useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const res = await fetch(`/api/comments/${productId}`); // Ruta para obtener comentarios
-        const data = await res.json();
-        setComments(data.comments); // Asigna los comentarios a tu estado
-      } catch (error) {
-        console.error("Error fetching comments:", error);
-      }
-    };
-
-    if (productId) {
-      fetchComments(); // Llamar a la función para obtener los comentarios
-    }
-  }, []);
-
+  // Función para enviar el comentario
   const submitComment = async (e) => {
     e.preventDefault();
 
@@ -40,13 +21,17 @@ const Comments = ({ productId, dataProduct }) => {
       });
 
       const data = await res.json();
-      console.log("Response from API:", data); // Agrega esta línea para ver la respuesta
+      console.log("Response from API:", data);
 
       if (res.ok) {
         alert("Comment submitted successfully!");
         setName("");
         setMessage("");
-        setComments((prev) => [...prev, data.comment]); // Agregar nuevo comentario al estado
+
+        // Aquí aseguramos que se actualicen los comentarios del array en la respuesta
+        if (data.comments) {
+          setComments(data.comments); // Reemplazamos el array completo con los comentarios actualizados
+        }
       } else {
         alert(`Error: ${data.error}`);
       }
@@ -61,15 +46,13 @@ const Comments = ({ productId, dataProduct }) => {
       <section className="text-gray-600 body-font">
         <h2 className="text-lg font-semibold mb-4">Comments:</h2>
         <div className="space-y-4">
-          {dataProduct.comments.length > 0 ? (
-            dataProduct.comments.map((element, index) => (
+          {comments.length > 0 ? (
+            comments.map((element, index) => (
               <div
                 key={index}
                 className="bg-white shadow-lg rounded-lg p-4 border border-gray-200"
               >
-                <p className="text-sm font-bold text-gray-900">
-                  {element.name}:
-                </p>
+                <p className="text-sm font-bold text-gray-900">{element.name}:</p>
                 <p className="text-gray-700 mt-1">{element.comment}</p>
               </div>
             ))
