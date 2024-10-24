@@ -52,8 +52,22 @@ const Comments = ({ productId, dataProduct }) => {
                 key={index}
                 className="bg-white shadow-lg rounded-lg p-4 border border-gray-200"
               >
-                <p className="text-sm font-bold text-gray-900">{element.name}:</p>
-                <p className="text-gray-700 mt-1">{element.comment}</p>
+                <p className="text-sm font-bold text-gray-900">
+                  {element.name}:
+                </p>
+                <div className="mb-4">
+                  <p className="text-gray-700 text-lg">{element.comment}</p>
+                  <span className="block text-sm text-gray-500 text-right">
+                    {new Date(element.date).toLocaleString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: true, // Cambia a false si prefieres 24 horas
+                    })}
+                  </span>
+                </div>
               </div>
             ))
           ) : (
