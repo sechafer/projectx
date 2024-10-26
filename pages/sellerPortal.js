@@ -6,8 +6,8 @@ import Link from 'next/link'
 const SellerPortal = () => {
     const router = useRouter();
 
-    const userId = router.query.userId;
-    console.log(userId);
+    //const userId = router.query.userId;
+    //console.log(userId);
 
     const handleAddItemClick = () => {
         router.push('/addItem');
