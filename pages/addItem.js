@@ -9,15 +9,50 @@ const AddItem = () => {
         desc: '',
         img: '',
         category: '',
-        color: '',
+        colour: '', // Using 'colour' here
         price: '',
         availableQty: '',
     });
     const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
+    const [notification, setNotification] = useState({ message: '', type: '', countdown: 4 });
 
-    const colors = ['Red', 'Green', 'Blue', 'Yellow', 'Black', 'White'];
-    const categories = ['Home Decor', 'Pottery', 'Ceramics', 'Embroidery'];
+    const colours = ['red', 'blue', 'pink', 'green', 'yellow'];
+    const categories = ['home decor', 'pottery', 'ceramics', 'embroidery'];
+
+    const createRandomSlug = () => {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let slug = '';
+        for (let i = 0; i < 6; i++) {
+            slug += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return slug;
+    };
+
+    useEffect(() => {
+        setFormData(prev => ({ ...prev, slug: createRandomSlug() }));
+
+        const myuser = JSON.parse(localStorage.getItem('myuser'));
+        if (myuser?.token) fetchData(myuser.token);
+    }, []);
+
+    useEffect(() => {
+        if (notification.type === 'success') {
+            const timer = setInterval(() => {
+                setNotification(prev => ({
+                    ...prev,
+                    countdown: prev.countdown - 1,
+                }));
+            }, 1000);
+
+            if (notification.countdown === 0) {
+                clearInterval(timer);
+                router.push('/sellerPortal');
+            }
+
+            return () => clearInterval(timer);
+        }
+    }, [notification, router]);
 
     const fetchData = async (token) => {
         try {
@@ -28,12 +63,8 @@ const AddItem = () => {
             });
             if (response.ok) {
                 const res = await response.json();
-                console.log("User Data Response:", res); // Log the entire response
-                // Directly access name and email from res
-                setUserName(res.name || ''); // Update this line
-                setUserEmail(res.email || ''); // Update this line
-                console.log("User Name:", res.name); // Log userName
-                console.log("User Email:", res.email); // Log userEmail
+                setUserName(res.name || '');
+                setUserEmail(res.email || '');
             } else {
                 console.error("Failed to fetch user data:", response.statusText);
             }
@@ -51,12 +82,8 @@ const AddItem = () => {
         e.preventDefault();
         const submissionData = { ...formData, userName, userEmail };
 
-        // Log the submission data to the console for debugging
-        console.log("Submission Data:", submissionData);
+        console.log("Form Data to Submit:", submissionData);
 
-        // I am getting an error on line 61 and 70 that all fields are required
-        // I think the error is from the slug field will debug and test it because everything else works fine
-        
         try {
             const response = await fetch('/api/addProduct', {
                 method: 'POST',
@@ -64,32 +91,27 @@ const AddItem = () => {
                 body: JSON.stringify(submissionData),
             });
             if (response.ok) {
-                router.push('/success');
+                setNotification({ message: "Submission successful!", type: 'success', countdown: 4 });
             } else {
                 const errorResponse = await response.json();
-                console.error("Error:", errorResponse.message || "Submission failed.");
+                setNotification({ message: `Submission failed: ${errorResponse.message || "Submission failed."}`, type: 'error' });
             }
         } catch (error) {
             console.error("Error submitting data:", error);
+            setNotification({ message: "Error submitting data. Please try again.", type: 'error' });
         }
-        
     };
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onloadend = () => {
-            setFormData(prev => ({ ...prev, img: reader.result })); // Save Base64 string to formData
+            setFormData(prev => ({ ...prev, img: reader.result }));
         };
         if (file) {
-            reader.readAsDataURL(file); // Convert image file to Base64
+            reader.readAsDataURL(file);
         }
     };
-
-    useEffect(() => {
-        const myuser = JSON.parse(localStorage.getItem('myuser'));
-        if (myuser?.token) fetchData(myuser.token);
-    }, []);
 
     return (
         <div className="flex flex-col items-center">
@@ -111,18 +133,25 @@ const AddItem = () => {
                     <option value="" disabled>Select Category</option>
                     {categories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
                 </select>
-                <select name="color" value={formData.color} onChange={handleChange} required>
-                    <option value="" disabled>Select Color</option>
-                    {colors.map(color => <option key={color} value={color}>{color}</option>)}
+                <select name="colour" value={formData.colour} onChange={handleChange} required> {/* Using 'colour' here */}
+                    <option value="" disabled>Select Colour</option>
+                    {colours.map(colour => <option key={colour} value={colour}>{colour}</option>)}
                 </select>
                 <input type="file" name="img" onChange={handleImageChange} />
 
-                {/* Hidden input fields for userName and userEmail */}
+                <input type="hidden" name="slug" value={formData.slug} />
                 <input type="hidden" name="userName" value={userName} />
                 <input type="hidden" name="userEmail" value={userEmail} />
 
                 <button type="submit" className="bg-pink-500 text-white py-2 px-6 rounded mt-2">Submit</button>
             </form>
+
+            {notification.message && (
+                <div className={`fixed bottom-4 right-4 p-4 rounded shadow-lg ${notification.type === 'success' ? 'bg-green-500' : 'bg-red-500'} text-white`}>
+                    {notification.message}
+                    {notification.type === 'success' && <div>Redirecting in {notification.countdown} seconds...</div>}
+                </div>
+            )}
         </div>
     );
 };

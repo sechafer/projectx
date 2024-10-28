@@ -4,9 +4,9 @@ import connectDb from '../../middleware/mongoose';
 const addProduct = async (req, res) => {
     if (req.method === 'POST') {
         try {
-            const { title, slug, desc, img, category, color, price, availableQty, userEmail, userName } = req.body;
+            const { title, slug, desc, img, category, colour, price, availableQty, userEmail, userName } = req.body;
 
-            if (!title || !slug || !desc || !img || !category || !color || !price || !availableQty || !userEmail || !userName) {
+            if (!title || !slug || !desc || !img || !category || !colour || !price || !availableQty || !userEmail || !userName) {
                 return res.status(400).json({ message: 'All fields are required.' });
             }
 
@@ -16,7 +16,7 @@ const addProduct = async (req, res) => {
                 desc,
                 img,
                 category,
-                color,
+                colour, // Using 'colour' here
                 price,
                 availableQty,
                 userEmail,
