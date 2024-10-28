@@ -9,7 +9,7 @@ const AddItem = () => {
         desc: '',
         img: '',
         category: '',
-        colour: '', // Using 'colour' here
+        colour: '', 
         price: '',
         availableQty: '',
     });
@@ -82,8 +82,6 @@ const AddItem = () => {
         e.preventDefault();
         const submissionData = { ...formData, userName, userEmail };
 
-        console.log("Form Data to Submit:", submissionData);
-
         try {
             const response = await fetch('/api/addProduct', {
                 method: 'POST',
@@ -91,7 +89,7 @@ const AddItem = () => {
                 body: JSON.stringify(submissionData),
             });
             if (response.ok) {
-                setNotification({ message: "Submission successful!", type: 'success', countdown: 4 });
+                setNotification({ message: "Submission successful!", type: 'success', countdown: 3 });
             } else {
                 const errorResponse = await response.json();
                 setNotification({ message: `Submission failed: ${errorResponse.message || "Submission failed."}`, type: 'error' });
@@ -133,7 +131,7 @@ const AddItem = () => {
                     <option value="" disabled>Select Category</option>
                     {categories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
                 </select>
-                <select name="colour" value={formData.colour} onChange={handleChange} required> {/* Using 'colour' here */}
+                <select name="colour" value={formData.colour} onChange={handleChange} required> 
                     <option value="" disabled>Select Colour</option>
                     {colours.map(colour => <option key={colour} value={colour}>{colour}</option>)}
                 </select>

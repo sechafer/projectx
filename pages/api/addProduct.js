@@ -16,7 +16,7 @@ const addProduct = async (req, res) => {
                 desc,
                 img,
                 category,
-                colour, // Using 'colour' here
+                colour, 
                 price,
                 availableQty,
                 userEmail,

@@ -5,12 +5,12 @@ const getUserProducts = async (req, res) => {
     if (req.method === 'POST') {
         const { userName, userEmail } = req.body;
 
-        console.log(`Fetching products for user: ${userName}, email: ${userEmail}`); // Log the incoming user data
+        console.log(`Fetching products for user: ${userName}, email: ${userEmail}`); 
 
         try {
             const products = await Product.find({
-                userName,      // No trimming of whitespace, directly using the variable
-                userEmail,     // No trimming of whitespace, directly using the variable
+                userName,
+                userEmail,
             });
 
             // Log each product's data

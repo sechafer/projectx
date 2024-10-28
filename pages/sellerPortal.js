@@ -7,7 +7,6 @@ const SellerPortal = () => {
     const [userEmail, setUserEmail] = useState("");
     const [products, setProducts] = useState([]); // Store user's products
 
-    // Retrieve user data and fetch their products
     useEffect(() => {
         const myuser = JSON.parse(localStorage.getItem('myuser'));
         if (myuser?.token) fetchUserData(myuser.token);
@@ -25,8 +24,8 @@ const SellerPortal = () => {
                 const res = await response.json();
                 setUserName(res.name || '');
                 setUserEmail(res.email || '');
-                // Fetch products after setting userName and userEmail
-                fetchUserProducts(res.name || '', res.email || ''); // Call fetchUserProducts here
+                // Fetch products after setting userName and userEmail to only pull products for the user
+                fetchUserProducts(res.name || '', res.email || '');
             } else {
                 console.error("Failed to fetch user data:", response.statusText);
             }
@@ -46,15 +45,6 @@ const SellerPortal = () => {
             if (response.ok) {
                 const result = await response.json();
                 setProducts(result.products || []);
-                if (result.products.length) {
-                    console.log(`${result.products.length} products found.`);
-                    // Log all product details for debugging
-                    result.products.forEach(product => {
-                        console.log("Product data:", product);
-                    });
-                } else {
-                    console.log("No items found.");
-                }
             } else {
                 console.error("Error fetching products:", response.statusText);
             }
@@ -73,9 +63,7 @@ const SellerPortal = () => {
                     body: JSON.stringify({ productId }),
                 });
                 if (response.ok) {
-                    // Filter out the deleted product from the products list
                     setProducts((prevProducts) => prevProducts.filter((product) => product._id !== productId));
-                    console.log("Product deleted successfully");
                 } else {
                     console.error("Error deleting product:", response.statusText);
                 }
