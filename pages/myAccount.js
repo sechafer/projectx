@@ -20,9 +20,6 @@ const MyAccount = ({ }) => {
   const [disabled, setdisabled] = useState(true)
   const [user, setuser] = useState()
 
-
-
-
   const handleChange = async (e) => {
 
     if (e.target.name == 'name') {
